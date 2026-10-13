@@ -1,0 +1,358 @@
+
+/* Basic page styling */
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 30px;
+    font-family: Arial, sans-serif;
+    background-color: #f4f7fb;
+    color: #1e293b;
+}
+
+/* Main heading */
+h1 {
+    text-align: center;
+    color: #4338ca;
+}
+
+body > p {
+    text-align: center;
+    font-size: 18px;
+}
+
+/* Events section */
+#events {
+    max-width: 1200px;
+    margin: 50px auto;
+}
+
+#events > h2 {
+    text-align: center;
+    font-size: 30px;
+    margin-bottom: 30px;
+}
+
+/* Event cards layout */
+.event-container {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 25px;
+}
+
+/* Individual event card */
+.event-card {
+    background-color: white;
+    border-radius: 14px;
+    overflow: hidden;
+    padding-bottom: 20px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+    transition: transform 0.3s ease;
+}
+
+.event-card:hover {
+    transform: translateY(-5px);
+}
+
+/* Card images */
+.event-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+/* Card text */
+.event-card h3,
+.event-card p {
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+.event-card h3 {
+    font-size: 22px;
+    margin-bottom: 10px;
+}
+
+.category {
+    display: inline-block;
+    background-color: #e0e7ff;
+    color: #4338ca;
+    padding: 6px 10px;
+    border-radius: 20px;
+    font-size: 13px;
+    font-weight: bold;
+}
+
+/* Register button */
+.register-btn {
+    margin: 10px 20px 0;
+    padding: 12px 20px;
+    width: calc(100% - 40px);
+    border: none;
+    border-radius: 8px;
+    background-color: #4338ca;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.register-btn:hover {
+    background-color: #312e81;
+}
+
+/* Responsive layout */
+@media (max-width: 850px) {
+    .event-container {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+@media (max-width: 550px) {
+    body {
+        padding: 15px;
+    }
+
+    .event-container {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Category filter buttons */
+.filters {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-bottom: 30px;
+}
+
+.filter-btn {
+    padding: 10px 20px;
+    border: 1px solid #4338ca;
+    border-radius: 25px;
+    background-color: white;
+    color: #4338ca;
+    cursor: pointer;
+    font-size: 15px;
+}
+
+.filter-btn:hover,
+.filter-btn.active {
+    background-color: #4338ca;
+    color: white;
+}
+
+/* Registration modal */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    inset: 0;
+    background-color: rgba(15, 23, 42, 0.65);
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.modal-content {
+    background-color: white;
+    width: 100%;
+    max-width: 450px;
+    max-height: 90vh;
+    overflow-y: auto;
+    padding: 30px;
+    border-radius: 15px;
+    position: relative;
+}
+
+.modal-content h2 {
+    margin-top: 10px;
+    color: #4338ca;
+}
+
+.close-btn {
+    position: absolute;
+    top: 12px;
+    right: 15px;
+    border: none;
+    background: none;
+    font-size: 28px;
+    cursor: pointer;
+}
+
+#registrationForm {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+#registrationForm input {
+    padding: 12px;
+    border: 1px solid #cbd5e1;
+    border-radius: 7px;
+    font-size: 15px;
+    width: 100%;
+}
+
+.submit-btn {
+    margin-top: 12px;
+    padding: 13px;
+    background-color: #4338ca;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.submit-btn:hover {
+    background-color: #312e81;
+}
+
+#successMessage {
+    color: #15803d;
+    font-weight: bold;
+}
+
+/* Sticky navigation */
+.navbar {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+    padding: 18px 30px;
+    margin: -30px -30px 0;
+    background-color: white;
+    box-shadow: 0 3px 12px rgba(0, 0, 0, 0.06);
+}
+
+.logo {
+    color: #4338ca;
+    font-size: 21px;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.nav-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 24px;
+}
+
+.nav-links a {
+    color: #334155;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.nav-links a:hover {
+    color: #4338ca;
+}
+
+/* Hero section */
+.hero {
+    text-align: center;
+    padding: 85px 20px;
+    margin: 0 -30px;
+    color: white;
+    background: linear-gradient(135deg, #312e81, #6366f1);
+}
+
+.hero-tag {
+    font-size: 13px;
+    letter-spacing: 3px;
+    font-weight: bold;
+}
+
+.hero h1 {
+    color: white;
+    font-size: clamp(32px, 5vw, 54px);
+    margin: 20px 0;
+}
+
+.hero-description {
+    max-width: 600px;
+    margin: 0 auto 30px;
+    line-height: 1.7;
+    font-size: 17px;
+}
+
+.hero-btn {
+    display: inline-block;
+    padding: 13px 24px;
+    background: white;
+    color: #4338ca;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.hero-btn:hover {
+    background: #e0e7ff;
+}
+
+/* Responsive navigation and hero */
+@media (max-width: 550px) {
+    .navbar {
+        flex-direction: column;
+        margin: -15px -15px 0;
+        padding: 16px;
+    }
+
+    .nav-links {
+        justify-content: center;
+        gap: 18px;
+    }
+
+    .hero {
+        margin: 0 -15px;
+        padding: 60px 18px;
+    }
+}
+
+/* About section */
+.about-section {
+    max-width: 850px;
+    margin: 60px auto 30px;
+    padding: 35px;
+    background-color: white;
+    border-radius: 14px;
+    text-align: center;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.06);
+}
+
+.about-section h2 {
+    color: #4338ca;
+    font-size: 28px;
+}
+
+.about-section p {
+    color: #475569;
+    line-height: 1.8;
+    font-size: 16px;
+}
+
+/* Footer */
+.footer {
+    text-align: center;
+    padding: 25px 15px;
+    margin: 50px -30px -30px;
+    background-color: #1e1b4b;
+    color: white;
+}
+
+.footer p {
+    margin: 8px 0;
+    font-size: 14px;
+}
+
+@media (max-width: 550px) {
+    .footer {
+        margin: 40px -15px -15px;
+    }
+}
